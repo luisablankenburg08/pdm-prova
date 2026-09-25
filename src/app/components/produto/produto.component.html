@@ -1,0 +1,25 @@
+<ion-card>
+
+  <ion-card-header>
+    <span style="font-size: 1.2rem; color: black; font-weight: bold">{{ produto?.nome}}</span>
+    <span style="font-size: 1rem; color: #222; font-weight: bold"> R$ {{ produto?.preco | number:'1.2-2' }} </span>
+    <div class="produto-badges">
+      <span class="categoria-badge">{{ produto?.categoria }}</span>
+      <span class="comanda-badge" *ngIf="produto.comanda !== undefined && produto?.comanda > 0">Na comanda: {{ produto?.comanda }}</span>
+    </div>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p> 
+      <span class="estoque-baixo" *ngIf="(produto?.estoque ?? 0) > 0 && (produto?.estoque ?? 0) <= 3" title="Últimas unidades">
+        <ion-icon [icon]="alertCircleOutline" aria-label="Últimas unidades"></ion-icon>
+        Últimas unidades!
+      </span>
+      <span class="estoque-esgotado" *ngIf="(produto?.estoque ?? 0) <= 0">Esgotado</span>
+    </p>
+    <ion-button [disabled]="(produto?.estoque ?? 0) <= 0" (click)="naComanda()">
+      {{ (produto?.estoque ?? 0) <= 0 ? 'Esgotado' : 'Colocar na Comanda' }}
+    </ion-button>
+  </ion-card-content>
+
+</ion-card>

@@ -1,0 +1,53 @@
+ion-button {
+    display: block;
+    margin: 8px auto 0;
+    --background: rgba(3, 70, 3, 0.815);
+    --color: beige;
+    --border-radius: 0.5vw;
+}
+
+.produto-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.categoria-badge,
+.comanda-badge {
+    border-radius: 4px;
+    color: beige;
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 10px;
+}
+
+.categoria-badge {
+    background: rgba(153, 121, 7, 0.815);
+}
+
+.comanda-badge {
+    background: #102a43;
+}
+
+.estoque-baixo,
+.estoque-esgotado {
+    align-items: center;
+    display: inline-flex;
+    gap: 4px;
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+.estoque-baixo {
+    color: #997907;
+}
+
+.estoque-baixo ion-icon {
+    font-size: 1.1rem;
+}
+
+.estoque-esgotado {
+    color: #9f1239;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "prova-pdm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

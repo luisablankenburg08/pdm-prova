@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bar do Joaquim</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">Sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-wrap">
+    <ion-card>
+      <ion-card-header class="header-cardapio">
+        <ion-toolbar color="transparent">
+          <ion-buttons slot="start">
+            <ion-button routerLink="/cardapio" class="header-button">Cardápio</ion-button>
+          </ion-buttons>
+            <ion-text style="color: beige; font-size: 1.2rem; font-weight: bold; margin-left: 10vw;">Minha Comanda</ion-text>
+        </ion-toolbar>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="conta-fechada" *ngIf="contaFechada">
+          <ion-text>Conta Fechada. Valeu!</ion-text>
+          <ion-button routerLink="/cardapio" class="fechar">Voltar ao cardápio</ion-button>
+        </div>
+
+        <ng-container *ngIf="!contaFechada">
+        <p class="vazio" *ngIf="itens.length === 0">Nenhum produto foi adicionado à comanda.</p>
+
+        <div class="item-comanda" *ngFor="let produto of itens">
+          <div>
+            <strong>{{ produto.nome }}</strong>
+            <span class="categoria">{{ produto.categoria }}</span>
+            <span>{{ produto.comanda }} x R$ {{ produto.preco | number:'1.2-2' }}</span>
+          </div>
+          <div class="item-acoes">
+            <ion-button fill="outline" size="small" (click)="diminuir(produto)">-</ion-button>
+            <strong>{{ produto.comanda }}</strong>
+            <ion-button fill="outline" size="small" (click)="aumentar(produto)">+</ion-button>
+            <ion-button fill="clear" color="danger" size="small" (click)="retirar(produto)">Retirar</ion-button>
+          </div>
+          <strong class="preco-item">R$ {{ produto.preco * (produto.comanda ?? 0) | number:'1.2-2' }}</strong>
+        </div>
+
+        <div class="resumo">
+          <div><span>Itens</span><strong>R$ {{ subtotal | number:'1.2-2' }}</strong></div>
+          <div><span>Couvert</span><strong>R$ {{ couvert | number:'1.2-2' }}</strong></div>
+          <div class="gorjeta-titulo"><span>Gorjeta</span><strong>R$ {{ valorGorjeta | number:'1.2-2' }}</strong></div>
+          <ion-buttons class="gorjetas">
+            <ion-button [fill]="gorjeta === 0 ? 'solid' : 'outline'" (click)="selecionarGorjeta(0)">0%</ion-button>
+            <ion-button [fill]="gorjeta === 0.1 ? 'solid' : 'outline'" (click)="selecionarGorjeta(0.1)">10%</ion-button>
+            <ion-button [fill]="gorjeta === 0.15 ? 'solid' : 'outline'" (click)="selecionarGorjeta(0.15)">15%</ion-button>
+          </ion-buttons>
+          <div class="total-final"><span>Total</span><strong>R$ {{ total | number:'1.2-2' }}</strong></div>
+          <p class="mensagem-minimo">Joaquim só fecha a conta a partir de R$ 20,00</p>
+          <ion-button expand="block" [disabled]="!podeFecharConta" (click)="fecharConta()" class="fechar">Fechar conta</ion-button>
+        </div>
+        </ng-container>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

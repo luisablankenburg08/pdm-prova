@@ -1,0 +1,157 @@
+ion-card-content {
+    color: black;
+    background: beige;
+	padding-top: 2vh;
+}
+
+.login-wrap {
+	max-width: 620px;
+	margin: 48px auto 0;
+}
+
+ion-toolbar {
+	--background: rgba(3, 70, 3, 0.815);
+	--color: beige;
+	--font-weight: bold;
+}
+
+ion-card {
+	border-radius: 12px;
+	margin: 0;
+}
+
+.header-cardapio {
+	background: rgba(3, 70, 3, 0.815);
+    color: beige;
+}
+ion-text {
+	font-size: 1rem;
+	padding-left: 10px;
+}
+
+.header-button {
+	--color: beige;
+}
+
+.item-comanda,
+.resumo > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.item-comanda {
+	background: white;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px rgba(16, 42, 67, 0.08);
+	margin-bottom: 18px;
+	min-height: 120px;
+	padding: 24px;
+}
+
+ion-card-content > .item-comanda:first-of-type {
+	margin-top: 0;
+}
+
+.item-comanda > div:first-child {
+	display: grid;
+	gap: 4px;
+	flex: 1;
+}
+
+.item-comanda > div:first-child strong {
+	font-size: 1.15rem;
+}
+
+.categoria,
+.vazio {
+	color: black;
+	font-size: 0.9rem;
+}
+
+.item-acoes,
+.gorjetas {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.item-acoes ion-button {
+	--border-color: rgba(16, 42, 67, 0.35);
+	--color: #102a43;
+	--border-radius: 12px;
+	margin: 0;
+}
+
+.preco-item {
+	min-width: 90px;
+	text-align: right;
+}
+
+.resumo {
+	background: lightgray;
+	border-radius: 16px;
+	display: grid;
+	gap: 10px;
+	margin-top: 22px;
+	padding: 22px;
+}
+
+.gorjeta-titulo {
+	margin-top: 6px;
+}
+
+.gorjetas {
+	justify-content: flex-end;
+}
+
+.total-final {
+	border-top: 2px solid rgba(3, 70, 3, 0.815);
+	color: rgba(3, 70, 3, 0.815);
+	font-size: 1.2rem;
+	padding-top: 14px;
+}
+
+.mensagem-minimo {
+	color: black;
+	font-size: 0.9rem;
+	margin: 4px 0 0;
+	text-align: center;
+}
+
+.conta-fechada {
+	display: grid;
+	gap: 18px;
+	padding: 32px;
+	text-align: center;
+}
+
+.conta-fechada ion-text {
+	color: rgba(3, 70, 3, 0.815);
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+@media (max-width: 600px) {
+	.item-comanda {
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 20px;
+	}
+
+	.item-acoes {
+		order: 3;
+		width: 100%;
+	}
+}
+
+
+.fechar {
+	background: rgba(3, 70, 3, 0.815);
+	color: beige;
+	border-radius: 0.5vw;
+	--background: rgba(3, 70, 3, 0.815);
+	--color: beige;
+	--border-radius: 0.5vw;
+}

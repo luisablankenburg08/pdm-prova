@@ -1,0 +1,74 @@
+.login-wrap {
+  max-width: 420px;
+  margin: 48px auto 0;
+}
+
+ion-toolbar {
+  --background: rgba(3, 70, 3, 0.815);
+  --color: beige;
+  --font-weight: bold;
+}
+
+.header-cardapio{
+    background: rgba(3, 70, 3, 0.815);
+    padding:0%;
+}
+
+ion-text {
+    color: beige; 
+    font-size: 1rem; 
+    float: left; 
+    padding-left:10px
+}
+
+ion-card-header {
+  font-size:2.4rem;
+  text-align: center;
+  padding-top: 5vh;
+  color: black;
+  font-weight: bold;
+}
+
+ion-card {
+  border-radius: 12px;
+  margin: 0;
+}
+
+ion-item {
+  --background: #f8fafc;
+  --border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.msg-erro {
+  background: #fff1f2;
+  color: #9f1239;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+ion-button {
+  margin-top: 8px;
+  
+}
+
+.saudacao {
+  font-size: 0.8rem;
+  margin-top: 1vh;
+  color: #333;
+}
+
+.filtros {
+    color: rgba(3, 70, 3, 0.815);
+    border: 1px solid rgba(3, 70, 3, 0.815);
+    border-radius: 1vh;
+}
+
+.filtros.filtro-selecionado {
+    background: rgba(3, 70, 3, 0.815);
+    color: beige;
+  --background: rgba(3, 70, 3, 0.815);
+  --color: beige;
+  --border-color: rgba(3, 70, 3, 0.815);
+}

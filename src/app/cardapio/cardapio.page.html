@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bar do Joaquim - Cardápio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <div class="login-wrap">
+    <ion-card style="background: beige;">
+      <ion-card-header class="header-cardapio">
+        <ion-toolbar color="transparent" >
+
+          <ion-text>Bar do Joaquim</ion-text>
+          
+          <ion-buttons slot="end">
+            <ion-button routerLink="/comanda" style="color: beige;">Comanda</ion-button>
+            <ion-button routerLink="/login" style="color: beige;">Sair</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-card-header>
+
+      <ion-card-content> 
+        <p class="saudacao" *ngIf="auth.usuario">
+          Conectado como <strong>{{ auth.usuario.email }}</strong>
+        </p>
+      <ion-buttons>
+        <ion-button class="filtros" [class.filtro-selecionado]="categoriaSelecionada === 'Tudo'" [fill]="categoriaSelecionada === 'Tudo' ? 'solid' : 'outline'" (click)="selecionarCategoria('Tudo')">Tudo</ion-button>
+        <ion-button class="filtros" [class.filtro-selecionado]="categoriaSelecionada === 'Lanche'" [fill]="categoriaSelecionada === 'Lanche' ? 'solid' : 'outline'" (click)="selecionarCategoria('Lanche')">Lanches</ion-button>
+        <ion-button class="filtros" [class.filtro-selecionado]="categoriaSelecionada === 'Doce'" [fill]="categoriaSelecionada === 'Doce' ? 'solid' : 'outline'" (click)="selecionarCategoria('Doce')">Doces</ion-button>
+        <ion-button class="filtros" [class.filtro-selecionado]="categoriaSelecionada === 'Porção'" [fill]="categoriaSelecionada === 'Porção' ? 'solid' : 'outline'" (click)="selecionarCategoria('Porção')">Porções</ion-button>
+      </ion-buttons>
+
+      <app-produto 
+        *ngFor="let produto of produtosVisiveis" [produto]="produto">
+      </app-produto>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
